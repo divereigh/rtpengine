@@ -310,6 +310,10 @@ void ice_restart(struct ice_agent *ag) {
 	__ice_reset(ag);
 }
 
+int ice_ufrag_cmp(struct ice_agent *ag, const struct stream_params *sp) {
+	return str_cmp_str0(&ag->ufrag[0], &sp->ice_ufrag);
+}
+
 /* called with the call lock held in W, hence agent doesn't need to be locked */
 void ice_update(struct ice_agent *ag, struct stream_params *sp) {
 	GList *l, *k;

@@ -158,6 +158,7 @@ void ice_agent_init(struct ice_agent **agp, struct call_media *media);
 void ice_update(struct ice_agent *, struct stream_params *);
 void ice_shutdown(struct ice_agent **);
 void ice_restart(struct ice_agent *);
+int ice_ufrag_cmp(struct ice_agent *, const struct stream_params *);
 
 void ice_candidates_free(GQueue *);
 void ice_remote_candidates(GQueue *, struct ice_agent *);
